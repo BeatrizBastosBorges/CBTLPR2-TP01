@@ -1,12 +1,7 @@
-package EX03;
-
-//Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
-
-
-
-
 public class Student extends Person 
 {
+    //Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
+
     private String program;
     private int year;
     private double fee;
@@ -21,17 +16,17 @@ public class Student extends Person
 
     public String getProgram()
     {
-        return program;
+        return this.program;
     }
 
     public void setProgram(String program)
     {
-        this.program = program;
+        this.program = program; 
     }
 
     public int getYear()
     {
-        return year;
+        return this.year;
     }
 
     public void setYear(int year)
@@ -41,16 +36,16 @@ public class Student extends Person
 
     public double getFee()
     {
-        return fee;
+        return this.fee;
     }
 
     public void setFee(double fee)
     {
-        this.fee = fee;
+        this.fee = fee; 
     }
 
     public String toString()
     {
-        return "Student[Person[name =" + name + ", address =" + address + "], program =" + program + ", year = " + year + "fee = " + fee + "]";
+        return String.format("Student[%s,program=%s,year=%s,fee=%s]", super.toString(), this.program, this.year, this.fee);
     }
 }
