@@ -1,55 +1,51 @@
-package EX02;
-
-//Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
-
-
-
-
-import EX01.Author;
-
 public class TestBook 
 {
     public static void main(String[] args) 
     {
-        // Criando dois autores para os testes
-        Author author1 = new Author(" J.K. Rowling ", " jkrowling@example.com ", 'f');
-        Author author2 = new Author(" Stephen King ", " sking@example.com ", 'm');
-        Author[] authors = {author1, author2};
+        //Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
 
+        Author[] authors1 = new Author[2];
+        authors1[0] = new Author("Tuler Moraes", "tulermoraes@email.com", 'm');
+        authors1[1] = new Author("Matilde Perez", "matildeperez@email.com", 'f');
+        Book book = new Book("Livro IFSP", authors1, 19.99);
+        
+        Author[] authors2 = new Author[3];
+        authors2[0] = new Author("J.K. Rowling", "jkrowling@hogwarts.com", 'f');
+        authors2[1] = new Author("George R.R. Martin", "grrmartin@westeros.com", 'm');
+        authors2[2] = new Author("J.R.R. Tolkien", "jrrtolkien@middleearth.com", 'm');
+        Book book2 = new Book("Contos Diversos", authors2, 50.5, 3);
 
-        // Testando o primeiro construtor (sem quantidade)
-        Book book1 = new Book("Harry Potter", authors, 39.99);
-        System.out.println(book1); // Deve chamar o método toString
+        System.out.println("Livro 1: \n");
+        System.out.println("name: " + book.getName());
+        System.out.println("price: " + book.getPrice());
+        System.out.println("qty: " + book.getQty() );
+        System.out.println("authors names: " + book.getAuthorNames());
+        System.out.println("authors: " + book.getAuthors());
+        System.out.println("toString(): " + book.toString() + "\n");
 
+        System.out.println("----------------------------\n");
 
-        // Testando o segundo construtor (com quantidade)
-        Book book2 = new Book("The Shining", authors, 49.99, 10);
-        System.out.println(book2); // Deve chamar o método toString
+        System.out.println("Mudando qty para 5\n");
+        book.setQty(5);
 
+        System.out.println("Livro 1: \n");
+        System.out.println("name: " + book.getName());
+        System.out.println("price: " + book.getPrice());
+        System.out.println("qty: " + book.getQty() );
+        System.out.println("authors names: " + book.getAuthorNames());
+        System.out.println("authors: " + book.getAuthors());
+        System.out.println("toString(): " + book.toString() + "\n");
 
-        // Testando os Getters para book1
-        System.out.println("Nome do livro: " + book1.getName());
-        System.out.println("Preço do livro: " + book1.getPrice());
-        System.out.println("Quantidade em estoque (default): " + book1.getQty());
+        System.out.println("----------------------------\n");
 
+        System.out.println("Livro 2: \n");
+        System.out.println("name: " + book2.getName());
+        System.out.println("price: " + book2.getPrice());
+        System.out.println("qty: " + book2.getQty() );
+        System.out.println("authors names: " + book2.getAuthorNames());
+        System.out.println("authors: " + book2.getAuthors());
+        System.out.println("toString(): " + book2.toString() + "\n");
 
-        // Testando os Getters para book2
-        System.out.println("Nome do livro: " + book2.getName());
-        System.out.println("Preço do livro: " + book2.getPrice());
-        System.out.println("Quantidade em estoque: " + book2.getQty());
-
-
-        // Testando o Setter de preço
-        book1.setPrice(29.99);
-        System.out.println("Novo preço do livro Harry Potter: " + book1.getPrice());
-
-
-        // Testando o Setter de quantidade
-        book2.setQty(20);
-        System.out.println("Nova quantidade de livros The Shining: " + book2.getQty());
-
-
-        // Testando o método getAuthorNames
-        System.out.println("Nomes dos autores: " + book1.getAuthorNames());
-    }
-}    
+        System.out.println("----------------------------\n");
+    }    
+}
