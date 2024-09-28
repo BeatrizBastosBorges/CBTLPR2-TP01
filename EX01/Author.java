@@ -1,15 +1,11 @@
-package EX01;
-
-//Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
-
-
-
-public class Author
+class Author
 {
+    //Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
+
     private String name;
     private String email;
-    private char gender;
-
+    private char gender = 'm';
+    
     public Author(String name, String email, char gender)
     {
         this.name = name;
@@ -19,12 +15,12 @@ public class Author
 
     public String getName()
     {
-        return name;
+        return this.name;
     }
 
     public String getEmail()
     {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email)
@@ -34,12 +30,11 @@ public class Author
 
     public char getGender()
     {
-        return gender;
+        return this.gender;
     }
 
-    public String toString()
+    public String toString() 
     {
-       return "Author[ name =" + name + ", email =" + email + ", gender = " + gender +" ]";
+        return String.format("Author [name=%s, email=%s, gender=%c]", name, email, gender);
     }
-     
 }
