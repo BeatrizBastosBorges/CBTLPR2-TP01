@@ -1,5 +1,7 @@
 class Author
 {
+    //Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
+    
     private String name;
     private String email;
     private char gender = 'm';
