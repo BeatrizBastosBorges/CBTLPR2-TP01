@@ -1,14 +1,7 @@
-package EX02;
-
-//Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
-
-
-
-
-import EX01.Author;
-
-public class Book
+public class Book 
 {
+    //Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
+
     private String name;
     private Author[] authors;
     private double price;
@@ -29,29 +22,24 @@ public class Book
         this.qty = qty;
     }
 
-    public String getName() 
+    public String getName()
     {
-        return name;
+        return this.name;
     }
 
     public Author[] getAuthors()
     {
-        return authors;
+        return this.authors;
     }
 
-    public double getPrice() 
+    public double getPrice()
     {
-        return price;
-    }
-
-    public void setPrice(double price)
-    {
-        this.price = price;
+        return this.price;  
     }
 
     public int getQty()
     {
-        return qty;
+        return this.qty;
     }
 
     public void setQty(int qty)
@@ -61,28 +49,31 @@ public class Book
 
     public String toString()
     {
-        String authorsString = "";
-        for (Author author : authors) 
+        StringBuilder authorsInfos = new StringBuilder();
+        for(int i = 0; i < this.authors.length; i++)
         {
-            authorsString += author.toString() + ",";
+            if(i == this.authors.length - 1)
+                authorsInfos.append("Author" + "[" + "name=" + this.authors[i].getName() + "," 
+                                  + "email=" + this.authors[i].getEmail() + "," 
+                                  + "gender=" + this.authors[i].getGender() + "]");  
+            else
+            authorsInfos.append("Author" + "[" + "name=" + this.authors[i].getName() + "," 
+                              + "email=" + this.authors[i].getEmail() + "," 
+                              + "gender=" + this.authors[i].getGender() + "],"); 
         }
-        return "Book[ name = " + name + ", authors = { " + authorsString + "}, price = " + price + ", qty = " + qty + " ]";
+        return String.format("Book[name=%s,authors={%s},price=%s,qty=%s]", this.name, authorsInfos.toString(), this.price, this.qty);
     }
 
     public String getAuthorNames()
     {
-        String authorNames = "";
-        for (Author author : authors) 
+        StringBuilder authorNames = new StringBuilder();
+        for(int i = 0; i < this.authors.length; i++)
         {
-            authorNames += author.getName() + ", ";
+            if(i == this.authors.length - 1)
+                authorNames.append(this.authors[i].getName());  
+            else
+                authorNames.append(this.authors[i].getName() + ',');
         }
-    
-        if (authorNames.length() > 0) 
-        {
-            authorNames = authorNames.substring(0, authorNames.length() - 2);
-        }
-    
-        return authorNames;
+        return authorNames.toString();
     }
-    
 }
