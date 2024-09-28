@@ -1,33 +1,33 @@
-package EX03;
+public class Person 
+{
+    //Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
 
-//Desenvolvido por Beatriz Bastos Borges e Miguel Luizatto Alves
+    private String name;
+    private String address;
 
-
-
-
-public class Person {
-    protected String name;
-    protected String address;
-
-    Person(String name, String address){
-        this.name = name;
+    public Person(String name, String address)
+    {
+        this.name = name;   
         this.address = address;
     }
 
-    public String getName() {
-        return name;
+    public String getName()
+    {
+        return this.name;
     }
 
-    public String getAddress() {
-        return address;
+    public String getAddress()
+    {
+        return this.address;    
     }
 
-    public void setAddress(String address) {
+    public void setAddress(String address) 
+    {
         this.address = address;
-    }
+    }   
 
-    public String toString() {
-        return "Person[name="+ name + ",address=" + address + "]";
+    public String toString()
+    {
+        return String.format("Person[name=%s,address=%s]",this.name, this.address);
     }
 }
-
